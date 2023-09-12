@@ -8,7 +8,10 @@
 
 extern void _init();
 
-void crash_me();
+void crash_me()
+{
+    return crash_me() + 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+}
 
 void timer(Registers* regs)
 {
@@ -39,9 +42,9 @@ void start(BootParams* bootParams)
     log_crit("Main", "This is a critical msg!");
     printf("Nanobyte OS v0.1\n");
     printf("This operating system is under construction.\n");
-    //i686_IRQ_RegisterHandler(0, timer);
+    i686_IRQ_RegisterHandler(0, timer);
 
-    //crash_me();
+    crash_me();
 
 end:
     for (;;);
